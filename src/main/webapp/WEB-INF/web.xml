@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <!-- SpringMVC的核心控制器 -->
+    <servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--配置 Servlet 的初始化参数，读取 SpringMVC 配置文件，创建 spring 容器-->
+        <init-param>
+            <!--DispatcherServlet 的一个属性，让 DispatcherServlet 加载 springmvc.xml 配置文件-->
+            <!--springmvc.xml 被加载那么就能够扫描到我们的 Controller 了，当然它里面的一些配置也生效了-->
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc.xml</param-value>
+        </init-param>
+        <!--正常的Servlet是接收请求才创建，这里配置 servlet 在容器启动时就被加载-->
+        <!--点进去就能看到注释啦-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>
