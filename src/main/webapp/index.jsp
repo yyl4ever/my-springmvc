@@ -12,6 +12,8 @@
 </head>
 <body>
     <h3>入门开始</h3>
-<a href="/hello">start</a>
+<a href="/hello">hello</a>
+<a href="/requestMapping">requestMapping</a>
+
 </body>
 </html>
