@@ -18,8 +18,18 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         <property name="prefix" value="/WEB-INF/pages/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
+    
+    <!--配置自定义类型转换器-->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="cn.com.study.converter.StringToDateConverter"/>
+            </set>
+        </property>
+    </bean>
+    
     <!-- 配置spring开启注解mvc的支持
      @RequestMapping就会生效了
     -->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="conversionService"/>
 </beans>
