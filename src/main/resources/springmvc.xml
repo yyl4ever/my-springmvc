@@ -28,6 +28,11 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         </property>
     </bean>
     
+    <!--配置前端控制器不拦截静态资源-->
+    <mvc:resources mapping="/js/**" location="js/"/>
+    <mvc:resources mapping="/css/**" location="css/"/>
+    <mvc:resources mapping="/images/**" location="images/"/>
+    
     <!-- 配置spring开启注解mvc的支持
      @RequestMapping就会生效了
     -->
