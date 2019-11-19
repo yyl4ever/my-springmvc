@@ -20,6 +20,7 @@ import java.util.UUID;
  */
 @Controller
 public class FileUploadController {
+    
     @RequestMapping("/fileUpload1")
     public String fileUpload1(HttpServletRequest request) throws Exception {
         // 使用 fileUpload 组件完成文件上传
@@ -59,7 +60,7 @@ public class FileUploadController {
 
     @RequestMapping("/fileUpload2")
     public String fileUpload2(HttpServletRequest request, MultipartFile upload) throws Exception {
-        // 使用 fileUpload 组件完成文件上传
+        // 使用 SpringMVC 框架完成文件上传
         // 上传的位置
         String path = request.getSession().getServletContext().getRealPath("/uploads");
         // 判断该路径是否存在
